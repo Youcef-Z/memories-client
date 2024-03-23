@@ -22,7 +22,6 @@ export default function Auth() {
     lastName: '',
     email: '',
     password: '',
-    confirmPassword: ''
   })
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -103,7 +102,7 @@ export default function Auth() {
             <Input name="email" label="Email Address" handleChange={handleChange} handleValidation={validateEmail} type="email" />
             {isSignup && emailError && <Typography sx={style.error}>{emailError}</Typography>}
             <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={() => setShowPassword(!showPassword)} />
-            {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
+            {/* {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />} */}
           </Grid>
           <Button type="submit" fullWidth variant="contained" color="primary" sx={style.submit}>
             {isSignup ? 'Sign Up' : 'Sign In'}
