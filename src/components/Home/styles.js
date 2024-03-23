@@ -1,0 +1,36 @@
+
+
+export const style = {
+  appBar: {
+    borderRadius: 15,
+    margin: '30px 0',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  heading: {
+    color: 'rgba(0,183,255, 1)',
+  },
+  image: {
+    marginLeft: '15px',
+  },
+  mainContainer: {
+    flexDirection: {
+      xs: "column-reverse",
+      sm: "row",
+    },
+    marginBottom: "40px"
+  },
+  appBarSearch: {
+    borderRadius: 1,
+    marginBottom: '16px',
+    display: 'flex',
+    padding: '16px',
+  },
+  pagination: {
+    borderRadius: 1,
+    marginTop: '16px',
+    padding: '16px',
+  },
+}
