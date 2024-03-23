@@ -18,7 +18,7 @@ export default function App() {
         <Container maxwidth="lg">
           <Navbar />
           <Routes>
-            <Route exact path="/" element={<Navigate to="/posts" />} />
+            <Route exact path="/" element={<Home />} />
             <Route exact path="/posts" element={<Home />} />
             <Route exact path="/posts/search" element={<Home />} />
             <Route path="/posts/:id" element={<PostDetails />} />
