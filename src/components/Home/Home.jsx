@@ -20,7 +20,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(fetchPosts())
-  }, [dispatch, page, searchQuery])
+  }, [dispatch])
 
   const searchPosts = () => {
     if (searchTerm.trim() || tags.length > 0) {
