@@ -69,6 +69,7 @@ export const postsSlice = createSlice({
         state.status = 'succeeded'
         state.error = null
         state.posts = action.payload
+        console.log(action.payload)
       })
       .addCase(fetchPostsBySearch.rejected, (state, action) => {
         state.status = 'failed'

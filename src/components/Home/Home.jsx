@@ -15,12 +15,18 @@ export default function Home() {
   const query = useQuery()
   const page = query.get('page') || 1
   const searchQuery = query.get('searchQuery')
+  const tagsQuery = query.get('tags')
   const [searchTerm, setSearchTerm] = useState('')
   const [tags, setTags] = useState([])
 
   useEffect(() => {
-    dispatch(fetchPosts())
-  }, [dispatch])
+    if (searchQuery || tagsQuery) {
+      dispatch(fetchPostsBySearch({ searchTerm: searchQuery || 'none', tags: tagsQuery || 'none' }))
+    } else {
+      navigate('/')
+    }
+
+  }, [dispatch, searchQuery, navigate])
 
   const searchPosts = () => {
     if (searchTerm.trim() || tags.length > 0) {

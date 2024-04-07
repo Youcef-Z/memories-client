@@ -1,6 +1,6 @@
 import Post from './Post/Post';
 import { style } from './styles'
-import { Grid, CircularProgress, Paper } from '@mui/material';
+import { Grid, CircularProgress, Paper, Typography } from '@mui/material';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAllPosts, selectPostsStatus, selectPostsError, fetchPosts } from '../../redux/posts';
@@ -17,6 +17,14 @@ export default function Posts() {
       <div style={style.loadingPaper}>
         <CircularProgress />
       </div>
+    )
+  }
+
+  if (postsStatus === 'failed') {
+    return (
+      <Paper sx={style.loadingPaper}>
+        <Typography variant="h5">Error while fetching posts</Typography>
+      </Paper>
     )
   }
   
