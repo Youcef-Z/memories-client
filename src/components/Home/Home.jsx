@@ -20,10 +20,10 @@ export default function Home() {
   const [tags, setTags] = useState([])
 
   useEffect(() => {
-    if (searchQuery || tagsQuery) {
+    if ((searchQuery || tagsQuery) && (page === '1')) {
       dispatch(fetchPostsBySearch({ searchTerm: searchQuery || 'none', tags: tagsQuery || 'none' }))
     } else {
-      navigate('/')
+      navigate(`/posts?page=${page}`)
     }
 
   }, [dispatch, searchQuery, navigate])
